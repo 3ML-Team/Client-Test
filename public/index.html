@@ -1,0 +1,46 @@
+<html>
+
+<head>
+  <title>Express</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <h1>Client-Test</h1>
+  <h2>Register</h2>
+  <form action="http://localhost:8080/auth/register" method="POST">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit">Create Account</button>
+  </form>
+</br>
+
+<h2>Login</h2>
+<form action="http://localhost:8080/auth/login" method="POST">
+  <div>
+    <label for="emailLogin">Email</label>
+    <input type="email" id="emailLogin" name="email" required>
+  </div>
+  <div>
+    <label for="passwordLogin">Password</label>
+    <input type="password" id="passwordLogin" name="password" required>
+  </div>
+  <button type="submit">Login</button>
+</form>
+</br>
+
+<button type="button" onclick="window.location.href='http://localhost:8080/auth/google'">Google</button>
+
+</body>
+
+</html>
