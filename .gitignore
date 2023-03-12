@@ -104,10 +104,3 @@ dist
 .tern-port
 
 
-# ignore JavaScript files
-*.js
-
-# allow TypeScript files
-!*.ts
-!*.tsx
-
