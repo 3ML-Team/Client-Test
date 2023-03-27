@@ -3,6 +3,18 @@
 <head>
   <title>Express</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
+  
+<script>
+  function addNameField() {
+    var nameFields = document.getElementById("nameFields");
+    var newField = document.createElement("input");
+    newField.type = "text";
+    newField.name = "names[]";
+    newField.id = "name" + (nameFields.children.length + 1);
+    nameFields.appendChild(newField);
+    nameFields.appendChild(document.createElement("br"));
+  }
+  </script>
 </head>
 
 <body>
@@ -40,6 +52,52 @@
 </br>
 
 <button type="button" onclick="window.location.href='http://localhost:8080/auth/google'">Google</button>
+
+
+
+
+<h2>Reset Password</h2>
+<form action="http://localhost:8080/auth/request-password-reset" method="POST">
+  <div>
+    <label for="emailLogin">Email</label>
+    <input type="email" id="emailLogin" name="email" required>
+  </div>
+  <button type="submit">Reset</button>
+</form>
+</br>
+
+<h2>Reset Email</h2>
+<form action="http://localhost:8080/auth/request-email-reset" method="POST">
+  <div>
+    <label for="emailReset">Email</label>
+    <input type="email" id="emailReset" name="email" required>
+  </div>
+  <button type="submit">Reset Email</button>
+</form>
+
+
+<h2>Reset Username</h2>
+<form action="http://localhost:8080/auth/request-username-reset" method="POST">
+  <div>
+    <label for="newUsername">New Username</label>
+    <input type="text" id="newUsername" name="newUsername" required>
+  </div>
+  <button type="submit">Reset Username</button>
+</form>
+</br>
+
+
+<form id="nameForm" action="/post/names" method="post" enctype="multipart/form-data">
+  <label for="names">Namen:</label><br>
+  <div id="nameFields">
+    <input type="text" name="names[]" id="name1"><br>
+  </div>
+  <label for="file">Datei:</label><br>
+  <input type="file" name="file" id="file"><br>
+  <button type="button" onclick="addNameField()">Weiteren Namen hinzufügen</button>
+  <br>
+  <input type="submit" value="Submit">
+</form>
 
 </body>
 
